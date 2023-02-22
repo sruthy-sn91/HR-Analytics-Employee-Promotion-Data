@@ -1,0 +1,12 @@
+feature_engine
+imbalanced_learn
+imblearn
+keras
+matplotlib
+numpy
+pandas
+scikit_learn
+seaborn
+streamlit
+tensorflow
+tensorflow_intel
