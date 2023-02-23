@@ -1,9 +1,14 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import gzip
+
+with gzip.open('model.pkl.gz', 'rb') as f_in:
+    # Read the compressed data and decompress it using pickle
+    model = pickle.load(f_in)
 
 # Load the pre-trained model
-model = pickle.load(open('model.pkl', 'rb'))
+# model = pickle.load(open('model.pkl', 'rb'))
 
 # Define a function to make predictions on the input data
 def predict(data):
