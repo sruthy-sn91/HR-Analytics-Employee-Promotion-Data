@@ -1,5 +1,5 @@
 # Import all the required libraries
-
+import gzip
 import pickle
 import numpy as np
 import pandas as pd
@@ -99,3 +99,6 @@ y_pred = model.predict(x_valid)
 pickle.dump(model, open('model.pkl','wb'))
 #load the model and test with a custom input
 model = pickle.load( open('model.pkl','rb'))
+
+with open('model.pkl', 'rb') as f_in, gzip.open('model.pkl.gz', 'wb') as f_out:
+    f_out.write(f_in.read())
